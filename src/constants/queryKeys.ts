@@ -1,1 +1,0 @@
-export const COURSES_GET_KEY = "courses_get"
