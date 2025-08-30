@@ -9,6 +9,9 @@ import type { TLoginForm } from "../../../types/forms/auth";
 
 import { verifyLogin } from "../../../utils/verifyLogin";
 import { LS_IS_AUTHORIZED } from "../../../constants/localStorageKeys";
+import styles from "./LoginForm.module.css";
+import AuthButton from "../../buttons/authButton/AuthButton";
+import { REGISTER_ROUTE } from "../../../constants/routes";
 
 const LoginForm = () => {
   const {
@@ -34,10 +37,12 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.authForm_wrapper}>
+      <h2 className={styles.authForm_title}>Login</h2>
+
       <FormInput
         label="Email"
-        placeholder="Email"
+        placeholder="Enter your email..."
         error={errors.email?.message}
         {...register("email", {
           required: "Email is required",
@@ -49,14 +54,17 @@ const LoginForm = () => {
       />
       <FormInput
         label="Password"
-        placeholder="Password"
+        placeholder="Enter your password..."
         error={errors.password?.message}
         {...register("password", {
           required: "Password is required",
         })}
       />
 
-      <button type="submit">Submit</button>
+      <AuthButton type="submit">Submit</AuthButton>
+      <p className={styles.authForm_footer}>
+        Don’t have an account? <a href={REGISTER_ROUTE}>Sign up</a>
+      </p>
     </form>
   );
 };

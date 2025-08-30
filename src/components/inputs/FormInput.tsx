@@ -1,4 +1,5 @@
 import type { IInputProps } from "../../types/inputs";
+import styles from "./FormInput.module.css"
 
 const FormInput = ({
   type,
@@ -8,16 +9,16 @@ const FormInput = ({
   ...rest
 }: IInputProps) => {
   return (
-    <div>
+    <div className={styles.authForm_group}>
       {!!label?.length && <label htmlFor="form-input">{label}</label>}
       <input
         type={type}
         placeholder={placeholder}
-        className=""
+        className={styles.authForm_input}
         name="form-input"
         {...rest}
       />
-      {!!error?.length && <p>{error}</p>}
+      {!!error?.length && <p className={styles.authForm_error}>{error}</p>}
     </div>
   );
 };
