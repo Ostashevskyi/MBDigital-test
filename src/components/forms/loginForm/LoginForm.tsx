@@ -12,6 +12,7 @@ import { LS_IS_AUTHORIZED } from "../../../constants/localStorageKeys";
 import styles from "./LoginForm.module.css";
 import AuthButton from "../../buttons/authButton/AuthButton";
 import { REGISTER_ROUTE } from "../../../constants/routes";
+import { toast } from "sonner";
 
 const LoginForm = () => {
   const {
@@ -28,6 +29,7 @@ const LoginForm = () => {
     });
 
     if (!result.status) {
+      toast.error(result.message)
       console.error(result.message);
       return;
     }
