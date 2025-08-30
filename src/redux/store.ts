@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import cartReducer from './cartSlice/cartSlice'
 import coursesReducer from "./coursesSlice/coursesSlice"
+import videoReducer from "./videoSlice/videoSlice"
 
 export const store = configureStore({
   reducer: {
     cart: cartReducer,
-    courses: coursesReducer
+    courses: coursesReducer,
+    video: videoReducer,
   },
 })
 
