@@ -1,4 +1,6 @@
-export interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IDefaultButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+
+export interface IButtonProps extends IDefaultButtonProps {
     href?: string
 }
 
