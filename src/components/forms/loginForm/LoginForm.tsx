@@ -8,6 +8,7 @@ import FormInput from "../../inputs/FormInput";
 import type { TLoginForm } from "../../../types/forms/auth";
 
 import { verifyLogin } from "../../../utils/verifyLogin";
+import { LS_IS_AUTHORIZED } from "../../../constants/localStorageKeys";
 
 const LoginForm = () => {
   const {
@@ -28,6 +29,7 @@ const LoginForm = () => {
       return;
     }
 
+    localStorage.setItem(LS_IS_AUTHORIZED, "true");
     navigate("/");
   };
 
