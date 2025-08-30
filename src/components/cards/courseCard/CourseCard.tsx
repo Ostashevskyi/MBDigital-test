@@ -67,6 +67,7 @@ const CourseCard = ({ course }: { course: ICourseCard }) => {
         <CourseVideoModal
           videoUrl={videoUrl}
           onClose={() => toggleModal("video", false)}
+          courseId={id}
         />
       )}
 
