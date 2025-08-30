@@ -1,0 +1,44 @@
+:global(*) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:global(html),
+:global(body) {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-family: sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:global(img),
+:global(picture),
+:global(video),
+:global(canvas),
+:global(svg) {
+  display: block;
+  max-width: 100%;
+}
+
+:global(input),
+:global(button),
+:global(textarea),
+:global(select) {
+  font: inherit;
+  color: inherit;
+}
+
+:global(button) {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+:global(ul),
+:global(ol) {
+  list-style: none;
+}
