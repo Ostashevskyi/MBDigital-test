@@ -12,6 +12,7 @@ import type { IRegisterFormProps } from "../../../types/forms/auth";
 import { LS_SAVE_USER } from "../../../constants/localStorageKeys";
 import { hashPassword } from "../../../utils/hashPassword";
 import { useNavigate } from "react-router";
+import { LOGIN_ROUTE } from "../../../constants/routes";
 
 const RegisterForm = () => {
   const {
@@ -37,7 +38,7 @@ const RegisterForm = () => {
     const user = localStorage.getItem(LS_SAVE_USER);
     
     if (user) {
-        navigate("/auth/login");
+        navigate(LOGIN_ROUTE);
     }
   };
 
