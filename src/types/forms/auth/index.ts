@@ -3,3 +3,5 @@ export interface IRegisterFormProps {
     password: string;
     confirm_password: string;
 }
+
+export type TLoginForm = Pick<IRegisterFormProps, "email" | "password">;
