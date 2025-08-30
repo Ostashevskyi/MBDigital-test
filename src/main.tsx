@@ -1,15 +1,22 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from "react";
+
+import { Provider } from "react-redux";
+import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router";
-import { router } from './routes/router.tsx';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-const queryClient = new QueryClient()
+import { store } from "./redux/store.ts";
 
-createRoot(document.getElementById('root')!).render(
+import { router } from "./routes/router.tsx";
+
+const queryClient = new QueryClient();
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
-    </QueryClientProvider>
-  </StrictMode>,
-)
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Provider>
+  </StrictMode>
+);

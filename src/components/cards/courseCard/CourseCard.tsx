@@ -1,40 +1,83 @@
-import { useState } from "react";
+import { memo, useCallback, useEffect, useState } from "react";
+
+import { useSelector } from "react-redux";
 
 import BuyCourseButton from "../../buttons/buyCourseButton/BuyCourseButton";
 
+import { usePurchaseCourse } from "../../../hooks/usePurchaseCourse";
+
+import NeedLoginModal from "../../modals/needLoginModal/NeedLoginModal";
 import CourseVideoModal from "../../modals/courseVideoModal/CourseVideoModal";
 
-import type { ICourseCard } from "../../../types/cards/courseCard";
+import type { RootState } from "../../../redux/store";
 
 import styles from "./CourseCard.module.css";
 
-const CourseCard = ({ course }: { course: ICourseCard }) => {
-  const { description, price, title, videoUrl } = course;
-  const [selectedCourseVideo, setSelectedCourseVideo] = useState<string>();
+import type { ICourseCard } from "../../../types/cards/courseCard";
 
-  const handleOpenModal = (videoUrl: string) => {
-    setSelectedCourseVideo(videoUrl);
-  };
+const CourseCard = ({ course }: { course: ICourseCard }) => {
+  const { description, price, title, videoUrl, id } = course;
+
+  const isPurchased = useSelector((state: RootState) =>
+    state.cart.allIds.includes(id)
+  );
+
+  const [isModalsOpen, setIsModalsOpen] = useState({
+    needLogin: false,
+    video: false,
+  });
+
+  const toggleModal = useCallback(
+    (modal: "needLogin" | "video", open: boolean) => {
+      setIsModalsOpen((prev) => ({ ...prev, [modal]: open }));
+    },
+    []
+  );
+
+  const { error, handlePurchase, isLoading, handleDelete } = usePurchaseCourse({
+    course,
+  });
+
+  useEffect(() => {
+    if (error && error.code === 401) {
+      toggleModal("needLogin", true);
+    }
+  }, [error]);
 
   return (
     <>
       <article className={styles.courseCard_wrapper}>
-        <h2 onClick={() => handleOpenModal(videoUrl)}>{title}</h2>
+        <h2 onClick={() => toggleModal("video", true)}>{title}</h2>
         <p>{description}</p>
         <div className={styles.priceContainer}>
           <p>{price}₴</p>
-          <BuyCourseButton>Buy</BuyCourseButton>
+          {!isPurchased ? (
+            <BuyCourseButton onClick={handlePurchase} loading={isLoading}>
+              Buy
+            </BuyCourseButton>
+          ) : (
+            <BuyCourseButton onClick={handleDelete} loading={isLoading}>
+              Delete
+            </BuyCourseButton>
+          )}
         </div>
       </article>
 
-      {selectedCourseVideo && (
+      {isModalsOpen.video && (
         <CourseVideoModal
-          videoUrl={selectedCourseVideo}
-          onClose={() => setSelectedCourseVideo("")}
+          videoUrl={videoUrl}
+          onClose={() => toggleModal("video", false)}
         />
+      )}
+
+      {isModalsOpen.needLogin && (
+        <NeedLoginModal onClose={() => toggleModal("needLogin", false)} />
       )}
     </>
   );
 };
 
-export default CourseCard;
+export default memo(
+  CourseCard,
+  (prev, next) => prev.course.id === next.course.id
+);

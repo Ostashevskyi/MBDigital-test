@@ -1,37 +1,31 @@
-import { useQuery } from "@tanstack/react-query";
+import { useEffect } from "react";
 
-import RefetchButton from "../../buttons/refetchButton/RefetchButton";
+import { useDispatch, useSelector } from "react-redux";
 
 import CourseCard from "../../cards/courseCard/CourseCard";
 
-import { COURSES_GET_KEY } from "../../../constants/queryKeys";
-
-import type { ICourseCard } from "../../../types/cards/courseCard";
+import type { AppDispatch, RootState } from "../../../redux/store";
+import { fetchCourses } from "../../../redux/coursesSlice/coursesSlice";
 
 import styles from "./CourseList.module.css";
 
 const CourseList = () => {
-  const { data, isError, isPending, refetch } = useQuery({
-    queryKey: [COURSES_GET_KEY],
-    queryFn: () =>
-      fetch("http://localhost:5000/courses").then(
-        (res) => res.json() as Promise<ICourseCard[]>
-      ),
-  });
+  const dispatch = useDispatch<AppDispatch>();
 
-  if (isPending) return "Loading...";
+  const { data, isLoading, error } = useSelector(
+    (state: RootState) => state.courses
+  );
 
-  if (isError)
+  useEffect(() => {
+    dispatch(fetchCourses());
+  }, [dispatch]);
+
+  if (isLoading) return "Loading..."
+
+  if (error)
     return (
       <>
         <p>Error during fetching courses</p>
-        <RefetchButton
-          onClick={() => {
-            refetch();
-          }}
-        >
-          Try again
-        </RefetchButton>
       </>
     );
 

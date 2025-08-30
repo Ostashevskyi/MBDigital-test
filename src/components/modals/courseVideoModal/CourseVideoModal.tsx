@@ -3,6 +3,7 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 import styles from "./CourseVideoModal.module.css";
+import CloseButton from "../../buttons/closeButton/CloseButton";
 
 interface Props {
   videoUrl: string;
@@ -39,9 +40,7 @@ const CourseVideoModal = ({ videoUrl, onClose }: Props) => {
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        <button className={styles.closeButton} onClick={onClose}>
-          ✖
-        </button>
+        <CloseButton onClick={onClose}/>
         <video
           className={styles.video}
           ref={videoRef}

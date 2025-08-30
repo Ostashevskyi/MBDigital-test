@@ -1,9 +1,12 @@
-import type { IButtonProps } from '../../../types/buttons'
+import type { TBuyButtonProps } from "../../../types/buttons";
+import style from "./BuyCourseButton.module.css";
 
-const BuyCourseButton = ({ children, ...rest }: IButtonProps) => {
+const BuyCourseButton = ({ children, loading, ...rest }: TBuyButtonProps) => {
   return (
-    <button {...rest}>{children}</button>
-  )
-}
+    <>
+      <button {...rest} disabled={loading} className={style.buyCourseBtn}>{children}</button>
+    </>
+  );
+};
 
-export default BuyCourseButton
+export default BuyCourseButton;
