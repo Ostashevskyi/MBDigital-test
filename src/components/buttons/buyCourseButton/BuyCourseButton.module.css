@@ -1,0 +1,28 @@
+.buyCourseBtn {
+  background-color: #4f46e5; /* фіолетовий */
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buyCourseBtn:hover:not(:disabled) {
+  background-color: #4338ca; /* темніший фіолетовий */
+}
+
+.buyCourseBtn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.buyCourseBtn:disabled {
+  background-color: #a5b4fc; /* блідий фіолетовий */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
