@@ -24,9 +24,8 @@ npm run server
 ```
 
 The server will run on [http://localhost:5000](http://localhost:5000).  
-Data comes from `db.json`.  
+Data comes from `data/courses.json`.  
 - `GET /courses` → list of courses  
-- `GET /courses/:id` → course by ID  
 
 ---
 
