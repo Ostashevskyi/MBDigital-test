@@ -1,0 +1,21 @@
+.courseCard_wrapper {
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 16px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.courseCard_wrapper h2 {
+    cursor: pointer;
+}
+
+.priceContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

@@ -8,6 +8,8 @@ import { COURSES_GET_KEY } from "../../../constants/queryKeys";
 
 import type { ICourseCard } from "../../../types/cards/courseCard";
 
+import styles from "./CourseList.module.css";
+
 const CourseList = () => {
   const { data, isError, isPending, refetch } = useQuery({
     queryKey: [COURSES_GET_KEY],
@@ -34,7 +36,7 @@ const CourseList = () => {
     );
 
   return (
-    <div>
+    <div className={styles.courseList_wrapper}>
       {data.map((course) => (
         <CourseCard key={course.id} course={course} />
       ))}
