@@ -1,0 +1,39 @@
+.authForm_wrapper {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.authForm_wrapper a {
+    text-align: center;
+}
+
+.authForm_title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.authForm_footer {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.authForm_footer a {
+  color: #4F46E5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.authForm_footer a:hover {
+  text-decoration: underline;
+}

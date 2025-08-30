@@ -8,15 +8,19 @@ import styles from "./NeedLoginModal.module.css";
 import CloseButton from "../../buttons/closeButton/CloseButton";
 
 interface Props {
-    onClose: () => void;
+  onClose: () => void;
 }
 
 const NeedLoginModal = ({ onClose }: Props) => {
   return createPortal(
     <div className={styles.needLogin_wrapper} onClick={onClose}>
       <div className={styles.needLogin_container}>
-        <CloseButton onClick={onClose} className={styles.needLogin_closeButton}/>
-        <p>You need to be authorized to buy course</p>
+        <CloseButton
+          onClick={onClose}
+          className={styles.needLogin_closeButton}
+        />
+        <h2>You need to be authorized</h2>
+        <p>Please sign in to buy the course.</p>
         <AuthButton href={LOGIN_ROUTE}>Sign In</AuthButton>
       </div>
     </div>,

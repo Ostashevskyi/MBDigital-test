@@ -13,6 +13,8 @@ import { LS_SAVE_USER } from "../../../constants/localStorageKeys";
 import { hashPassword } from "../../../utils/hashPassword";
 import { useNavigate } from "react-router";
 import { LOGIN_ROUTE } from "../../../constants/routes";
+import styles from "../loginForm/LoginForm.module.css";
+import AuthButton from "../../buttons/authButton/AuthButton";
 
 const RegisterForm = () => {
   const {
@@ -36,14 +38,15 @@ const RegisterForm = () => {
     );
 
     const user = localStorage.getItem(LS_SAVE_USER);
-    
+
     if (user) {
-        navigate(LOGIN_ROUTE);
+      navigate(LOGIN_ROUTE);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.authForm_wrapper}>
+      <h2 className={styles.authForm_title}>Register</h2>
       <FormInput
         label="Email"
         placeholder="Enter your email..."
@@ -66,13 +69,16 @@ const RegisterForm = () => {
             message:
               "Password must contain 1 uppercase, 1 lowercase, and 1 special character",
           },
-          minLength: PASSWORD_MIN_LENGTH,
+          minLength: {
+            value: PASSWORD_MIN_LENGTH,
+            message: "Password should be at least 6 characters long"
+          },
         })}
         error={errors.password?.message}
       />
       <FormInput
         label="Confirm Password"
-        placeholder="Confirm your password"
+        placeholder="Confirm your password..."
         {...register("confirm_password", {
           required: "Confirm password is required",
           validate: (value: string) => {
@@ -83,7 +89,10 @@ const RegisterForm = () => {
         })}
         error={errors.confirm_password?.message}
       />
-      <button type="submit">submit</button>
+      <AuthButton type="submit">Submit</AuthButton>
+      <p className={styles.authForm_footer}>
+        Already have an account? <a href={LOGIN_ROUTE}>Sign in</a>
+      </p>
     </form>
   );
 };

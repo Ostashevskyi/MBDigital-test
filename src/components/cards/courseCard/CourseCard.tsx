@@ -50,7 +50,7 @@ const CourseCard = ({ course }: { course: ICourseCard }) => {
         <h2 onClick={() => toggleModal("video", true)}>{title}</h2>
         <p>{description}</p>
         <div className={styles.priceContainer}>
-          <p>{price}₴</p>
+          <span>{price}₴</span>
           {!isPurchased ? (
             <BuyCourseButton onClick={handlePurchase} loading={isLoading}>
               Buy
