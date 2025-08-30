@@ -15,6 +15,7 @@ import { useNavigate } from "react-router";
 import { LOGIN_ROUTE } from "../../../constants/routes";
 import styles from "../loginForm/LoginForm.module.css";
 import AuthButton from "../../buttons/authButton/AuthButton";
+import { toast } from "sonner";
 
 const RegisterForm = () => {
   const {
@@ -41,6 +42,7 @@ const RegisterForm = () => {
 
     if (user) {
       navigate(LOGIN_ROUTE);
+      toast.success("User was successfully created")
     }
   };
 
