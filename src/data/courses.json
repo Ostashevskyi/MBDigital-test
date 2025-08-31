@@ -1,0 +1,144 @@
+{
+  "courses": [
+    {
+      "id": "c1a7f9d2-01",
+      "title": "HTML & CSS Fundamentals",
+      "description": "Learn to build modern responsive websites using HTML5 and CSS3.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "price": 149.0
+    },
+    {
+      "id": "c1a7f9d2-02",
+      "title": "JavaScript Basics",
+      "description": "Introduction to JavaScript programming: variables, functions, and events.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "price": 199.0
+    },
+    {
+      "id": "c1a7f9d2-03",
+      "title": "React for Beginners",
+      "description": "Build interactive UIs with React: components, hooks, and routing.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      "price": 299.0
+    },
+    {
+      "id": "c1a7f9d2-04",
+      "title": "TypeScript Essentials",
+      "description": "Strongly type your JavaScript with TypeScript and improve maintainability.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "price": 249.0
+    },
+    {
+      "id": "c1a7f9d2-05",
+      "title": "Next.js Fullstack Development",
+      "description": "Server-side rendering and API routes with Next.js.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "price": 399.0
+    },
+    {
+      "id": "c1a7f9d2-06",
+      "title": "Node.js API Development",
+      "description": "RESTful API design with Node.js, Express, and MongoDB.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+      "price": 329.0
+    },
+    {
+      "id": "c1a7f9d2-07",
+      "title": "Databases with PostgreSQL",
+      "description": "Learn how to design, query, and optimize relational databases.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+      "price": 279.0
+    },
+    {
+      "id": "c1a7f9d2-08",
+      "title": "GraphQL Basics",
+      "description": "Build flexible APIs with GraphQL and Apollo Server.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/SubaruOutbackOnStreetAndDirt.mp4",
+      "price": 289.0
+    },
+    {
+      "id": "c1a7f9d2-09",
+      "title": "Docker Fundamentals",
+      "description": "Containerize your applications with Docker.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "price": 319.0
+    },
+    {
+      "id": "c1a7f9d2-10",
+      "title": "Kubernetes for Developers",
+      "description": "Orchestrate containers and manage deployments with Kubernetes.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "price": 379.0
+    },
+    {
+      "id": "c1a7f9d2-11",
+      "title": "CI/CD with GitHub Actions",
+      "description": "Automate builds, tests, and deployments using GitHub Actions.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "price": 259.0
+    },
+    {
+      "id": "c1a7f9d2-12",
+      "title": "Cloud Computing with AWS",
+      "description": "Deploy and manage scalable apps with Amazon Web Services.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "price": 429.0
+    },
+    {
+      "id": "c1a7f9d2-13",
+      "title": "Cybersecurity Basics",
+      "description": "Protect systems and data with security best practices.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+      "price": 299.0
+    },
+    {
+      "id": "c1a7f9d2-14",
+      "title": "Python for Data Science",
+      "description": "Use Python for data analysis and visualization.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "price": 349.0
+    },
+    {
+      "id": "c1a7f9d2-15",
+      "title": "Machine Learning with Scikit-learn",
+      "description": "Supervised and unsupervised learning with Python.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "price": 399.0
+    },
+    {
+      "id": "c1a7f9d2-16",
+      "title": "Deep Learning with TensorFlow",
+      "description": "Neural networks and AI with TensorFlow.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "price": 449.0
+    },
+    {
+      "id": "c1a7f9d2-17",
+      "title": "DevOps Best Practices",
+      "description": "Infrastructure as code, monitoring, and automation.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
+      "price": 389.0
+    },
+    {
+      "id": "c1a7f9d2-18",
+      "title": "Testing with Jest & Playwright",
+      "description": "Automated testing for frontend and backend applications.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+      "price": 279.0
+    },
+    {
+      "id": "c1a7f9d2-19",
+      "title": "Mobile Development with React Native",
+      "description": "Build cross-platform mobile apps with React Native.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "price": 359.0
+    },
+    {
+      "id": "c1a7f9d2-20",
+      "title": "AI for Beginners",
+      "description": "Introduction to artificial intelligence and its applications.",
+      "videoUrl": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "price": 499.0
+    }
+  ]
+}

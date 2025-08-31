@@ -1,0 +1,27 @@
+.needLogin_wrapper {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.needLogin_container {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  height: auto;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.needLogin_container button {
+    color: black
+}
+

@@ -1,0 +1,33 @@
+.courseList_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 24px 16px;
+}
+
+.pageError {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 40px 20px;
+  color: #dc2626; 
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.pageError span {
+  margin: 8px 0px;
+  font-size: 14px;
+  color: #b91c1c; 
+
+}
+
+@media(min-width: 320px) and (max-width: 1023px) {
+    .courseList_wrapper {
+        justify-content: center;
+    }
+}

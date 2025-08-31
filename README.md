@@ -1,69 +1,47 @@
-# React + TypeScript + Vite
+# 📚 Learny – Online Courses Platform  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Learny is an online learning platform where users can browse courses, watch video previews, and purchase access to materials.  
+The project is built with **React + Redux Toolkit + TypeScript**, using **json-server** as a mock backend.  
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 How to Run the Project Locally  
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Install dependencies  
+```bash
+npm install
+```
+2. Start the frontend (React + Vite)
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Vite → [http://localhost:5173](http://localhost:5173)  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+3. Start the mock server (json-server)  
+```bash
+npm run server
 ```
+
+The server will run on [http://localhost:5000](http://localhost:5000).  
+Data comes from `data/courses.json`.  
+- `GET /courses` → list of courses  
+
+---
+
+## 🛠️ Technologies
+- ⚛️ **React 19**  
+- 🎨 **CSS Modules**  
+- 📦 **Redux Toolkit** (state management)  
+- 🔄 **Redux Async Thunks** (API requests)  
+- 🎬 **react-content-loader** (skeleton loaders)  
+- 🗄 **json-server** (mock API)  
+- 🧩 **TypeScript** (static typing) 
+
+## 💡 Features
+- Fetch and display a list of courses from API (`/courses`)  
+- Watch course previews in a video modal  
+- Local authentication (via `localStorage`)  
+- Add/remove courses from the cart  
+- Error handling with a **Try again** button  
+- Skeleton loaders while fetching

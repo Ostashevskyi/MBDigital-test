@@ -1,0 +1,46 @@
+.courseCard_wrapper {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+  max-width: 300px;
+}
+
+.courseCard_wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.courseCard_wrapper h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.courseCard_wrapper p {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 12px;
+  flex-grow: 1;
+  line-height: 1.4;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.priceContainer span {
+  font-weight: 600;
+  font-size: 16px;
+  color: #4F46E5;
+}
